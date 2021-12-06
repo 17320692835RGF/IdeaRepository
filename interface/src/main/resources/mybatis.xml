@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <environments default="online">
+        <environment id="local">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/web-design?serverTimezone=UTC"/>
+                <property name="username" value="kaiser"/>
+                <property name="password" value="111111"/>
+            </dataSource>
+        </environment>
+
+        <environment id="online">
+            <transactionManager type="JDBC"/>
+        <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://127.0.0.1:3306/web-design?serverTimezone=UTC&amp;characterEncoding=utf-8"/>
+            <property name="username" value="root"/>
+            <property name="password" value="123456"/>
+        </dataSource>
+    </environment>
+    </environments>
+
+    <!--指定sql映射文件的位置-->
+    <mappers>
+        <mapper resource="com/mapper/comments.xml"/>
+        <mapper resource="com/mapper/holiday.xml"/>
+        <mapper resource="com/mapper/knowledge.xml"/>
+        <mapper resource="com/mapper/law.xml"/>
+        <mapper resource="com/mapper/news.xml"/>
+        <mapper resource="com/mapper/user.xml"/>
+        <mapper resource="com/mapper/video.xml"/>
+    </mappers>
+</configuration>

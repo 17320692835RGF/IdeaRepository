@@ -1,0 +1,18 @@
+购物网站，实现了登陆，注销，注册（含验证码）；
+实现了购物车，批量删除购物车与批量购买；
+实现了用户发布商品，对商品按人气和价格排序，分页、分类查看商品；
+实现了可隐藏的搜索框，首页图片滚动；
+Mysql数据库,junit测试工具,jstl标签库,文件上传用fileupload和io实现,mvc设计模式
+
+
+发布注意事项：
+（1）我是使用的手动发布，即是手动安装jdk1.8，tomcat7.0，mysql8.0   https://blog.csdn.net/qq_36910634/article/details/104652499  
+（2）连接不上数据库问题：注意版本问题，mysql一定要使用8.0版本，否则连接不上数据库 https://blog.csdn.net/WANG_yu09/article/details/82709233  https://blog.csdn.net/Rbaggio92/article/details/108202772   
+（3）数据库关闭异常问题：在url加上&useSSL=false   https://blog.csdn.net/qq_34075488/article/details/85106860
+（4）上传的图片存不到服务器上问题：注意linux和windows上目录的区别，linux是/，windows是\\，因为这个问题导致上传的图片存不到服务器上，还有可能是权限问题。https://www.cnblogs.com/tizer/p/10367386.html
+（5）验证码不显示问题：vim打开catalina.sh,大概位置在233行，如果不显示行号，进入编辑模式，输入：set number即可显示行号，如图所示，在JAVA_OPTS后追加-Djava.awt.headless=true  https://blog.csdn.net/li_wen_jin/article/details/101447522
+	注意图像处理JPEGCodec类已经从Jdk1.7移除
+（6）注意使用sudo 命令开启tomcat，避免权限问题
+
+
+

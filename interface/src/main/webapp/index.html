@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- 标题 -->
+    <title>环境保护宣传网站 - 【网站设计比赛】</title>
+    <!-- 图标 -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- font-awesome -->
+    <!--    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- animate.css -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.0.3/wow.min.js"></script>
+
+    <!-- owl -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <!-- Magnific Popup -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- slider-pro -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/slider-pro/1.2.0/css/slider-pro.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/slider-pro/1.2.0/js/jquery.sliderPro.min.js"></script>
+
+    <!-- 响应式页面 -->
+    <link rel="stylesheet" href="css/responsive.css"/>
+
+    <!-- 兼容IE6 7 8 的h5标签 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/html5shiv/3.7.1/html5shiv.min.js"></script>
+
+    <!-- 兼容IE6 7 8 的css3样式 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+
+    <!-- 动过渡效果 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- jquery相关 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/scrollup/2.1.0/jquery.scrollUp.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.9.0-rc.1/echarts.min.js"></script>
+
+    <!-- 自己的css -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- 自己的js -->
+    <script src="js/util.js"></script>
+    <script src="js/Interface.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+<!-- 开始时候的动图 -->
+<div id="loadingDiv" class="loading-div">
+    <div id="loading" class="loading"></div>
+</div>
+
+<!-- 导航栏 -->
+<header>
+    <nav id="navbar" role="navigation">
+        <div class="container">
+            <!-- 折叠框 小屏幕可见 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img class="logo" id="logo" src="images/logo.png" alt="Page">
+                </a>
+            </div>
+
+            <div id="nav-menu" class="navbar-collapse collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#slider">首页</a>
+                    </li>
+                    <li>
+                        <a href="#dynamic">环保网站</a>
+                    </li>
+                    <li>
+                        <a href="#news">环保新闻</a>
+                    </li>
+                    <li>
+                        <a href="#video">环保视频</a>
+                    </li>
+                    <li>
+                        <a href="#data">环保数据</a>
+                    </li>
+                    <li>
+                        <a href="#knowledge">环保小知识</a>
+                    </li>
+                    <li>
+                        <a href="https://gitee.com/web-design-hncj/web-design-front" target="_blank">关于项目</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+
+<!-- 首页轮播图 -->
+<section id="slider" class="slider-pro">
+    <div class="sp-slides">
+        <!-- 一张轮播 -->
+        <div class="sp-slide main-slides">
+            <div class="img-overlay"></div>
+            <!-- 图片 -->
+            <img class="sp-image" src="images/slider/1.jpg" alt=""/>
+            <!-- 上面的大字 -->
+            <h1 class="sp-layer slider-text-big" data-position="center" data-show-transition="right"
+                data-hide-transition="right" data-show-delay="1500" data-hide-delay="200">
+                <span class="primary-color">环境保护</span>
+                <span>-</span>
+                <span>共同努力</span>
+            </h1>
+            <!-- 下面的小字 -->
+            <p class="sp-layer" data-position="center" data-vertical="15%" data-show-delay="2000"
+               data-hide-delay="200" data-show-transition="left" data-hide-transition="down">
+                我们只有一个地球，共在一片蓝天下，让我们采取新行动保护和净化我们的地球
+            </p>
+        </div>
+
+        <!-- 一张轮播 -->
+        <div class="sp-slide main-slides">
+            <div class="img-overlay"></div>
+            <!-- 图片 -->
+            <img class="sp-image" src="images/slider/2.jpg" alt=""/>
+            <!-- 上面的大字 -->
+            <h1 class="sp-layer slider-text-big" data-position="center" data-show-transition="right"
+                data-hide-transition="right" data-show-delay="1500" data-hide-delay="200">
+                <span class="primary-color">环境保护</span>
+                <span>-</span>
+                <span>共同努力</span>
+            </h1>
+            <!-- 下面的小字 -->
+            <p class="sp-layer" data-position="center" data-vertical="15%" data-show-delay="2000"
+               data-hide-delay="200" data-show-transition="left" data-hide-transition="down">
+                地球是万物生灵共同的家园，共生共荣来自万物的和谐
+            </p>
+        </div>
+
+        <!-- 一张轮播 -->
+        <div class="sp-slide main-slides">
+            <div class="img-overlay"></div>
+            <!-- 图片 -->
+            <img class="sp-image" src="images/slider/3.jpg" alt=""/>
+            <!-- 上面的大字 -->
+            <h1 class="sp-layer slider-text-big" data-position="center" data-show-transition="right"
+                data-hide-transition="right" data-show-delay="1500" data-hide-delay="200">
+                <span class="primary-color">环境保护</span>
+                <span>-</span>
+                <span>共同努力</span>
+            </h1>
+            <!-- 下面的小字 -->
+            <p class="sp-layer" data-position="center" data-vertical="15%" data-show-delay="2000"
+               data-hide-delay="200" data-show-transition="left" data-hide-transition="down">
+                洁净的空气、幽雅的环境是我们共享的，每个人都应对环境保护尽一份义务
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- 环保动态 -->
+<section id="dynamic" class="section-wrapper background-one">
+    <div class="container">
+        <div class="row">
+            <!-- 标题 -->
+            <div class="section-header col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
+                <h1><span class="primary-color">环保网站</span></h1>
+                <div class="short-line"></div>
+                <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+                    更多动态
+                </p>
+            </div>
+
+            <!-- 动态列表 -->
+            <div class="dynamic-list">
+                <!-- 单个动态 -->
+                <div class="dynamic-item col-md-3 col-sm-3 col-xs-12 wow bounceInLeft">
+                    <div class="dynamic-icon">
+                        <i class="fa fa-envira"></i>
+                    </div>
+                    <h3><a href="http://www.hjjczz.com.cn/" target="_blank">中国环境监察网</a></h3>
+                </div>
+
+                <div class="dynamic-item col-md-3 col-sm-3 col-xs-12 wow bounceInLeft">
+                    <div class="dynamic-icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <h3><a href="https://www.cenews.com.cn/" target="_blank">中国环境网</a></h3>
+                </div>
+
+                <div class="dynamic-item  col-md-3 col-sm-3 col-xs-12 wow bounceInLeft">
+                    <div class="dynamic-icon">
+                        <i class="fa fa-tree"></i>
+                    </div>
+                    <h3><a href="http://huanbao.bjx.com.cn/hot/hot_4037.shtml" target="_blank">北极星环保网</a></h3>
+                </div>
+
+                <div class="dynamic-item  col-md-3 col-sm-3 col-xs-12  wow bounceInLeft">
+                    <div class="dynamic-icon">
+                        <i class="fa fa-internet-explorer"></i>
+                    </div>
+                    <h3><a href="http://www.news.cn/energy/index.htm" target="_blank">新华环保网</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 环保新闻 -->
+<section id="news" class="section-wrapper background-two">
+    <!-- 标题 -->
+    <div class="section-header col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
+        <h1><span class="primary-color">环保新闻</span></h1>
+        <div class="short-line"></div>
+        <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+            <a id="refresh-news">点击刷新</a>
+        </p>
+    </div>
+
+    <div class="news-list row">
+
+        <div class="news-item col-md-4 col-sm-4 col-xs-12 wow bounceInLeft">
+            <div class="main">
+                <img src="images/slider/1.jpg" alt="">
+            </div>
+            <p class="title"><a href="" target="_blank">新闻标题.....</a></p>
+            <p class="from">新闻来源</p>
+        </div>
+
+        <div class="news-item col-md-4 col-sm-4 col-xs-12 wow fadeInUp">
+            <div class="main">
+                <img src="images/slider/1.jpg" alt="">
+            </div>
+            <p class="title"><a href="" target="_blank">新闻标题.....</a></p>
+            <p class="from">新闻来源</p>
+        </div>
+
+        <div class="news-item col-md-4 col-sm-4 col-xs-12 wow bounceInRight">
+            <div class="main">
+                <img src="images/slider/1.jpg" alt="">
+            </div>
+            <p class="title"><a href="" target="_blank">新闻标题.....</a></p>
+            <p class="from">新闻来源</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 环保视频 -->
+<section id="video" class="section-wrapper background-one">
+    <!-- 标题 -->
+    <div class="section-header col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
+        <h1><span class="primary-color">环保视频</span></h1>
+        <div class="short-line"></div>
+        <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+            <a id="refresh-video">点击刷新</a>
+        </p>
+    </div>
+
+    <div class="video-list row">
+        <div class="video-item left col-md-6 col-sm-6 col-xs-12 wow bounceInLeft">
+            <div class="video">
+                <!--suppress HtmlDeprecatedAttribute -->
+                <iframe class="video-frame" id="videoFrameLeft" frameborder="0"
+                        src="//player.bilibili.com/player.html?aid=97352674&bvid=BV1j7411R7jc&cid=166156570&page=1"></iframe>
+                <p class="video-name">视频名称</p>
+            </div>
+        </div>
+        <div class="video-item right col-md-6 col-sm-6 col-xs-12 wow bounceInRight">
+            <div class="video">
+                <!--suppress HtmlDeprecatedAttribute -->
+                <iframe class="video-frame" id="videoFrameRight" frameborder="0"
+                        src="//player.bilibili.com/player.html?aid=97352674&bvid=BV1j7411R7jc&cid=166156570&page=1"></iframe>
+                <p class="video-name">视频名称</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- 环保数据 -->
+<section id="data" class="section-wrapper background-two">
+    <!-- 标题 -->
+    <div class="section-header col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
+        <h1><span class="primary-color">环保数据</span></h1>
+        <div class="short-line"></div>
+    </div>
+
+    <!-- 数据列表 -->
+    <div class="data-list wow fadeIn" data-wow-duration="2s">
+        <!-- 单个数据 -->
+        <div class="data-item col-md-6 col-sm-12 col-xs-12">
+            <div id="chart-aqi" class="chart">
+            </div>
+            <p>平顶山市空气质量 - PM2.5 趋势图</p>
+        </div>
+
+        <div class="data-item col-md-6 col-sm-12 col-xs-12">
+            <div id="chart-pm25" class="chart">
+
+            </div>
+            <p>平顶山市空气质量 - PM10 趋势图</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- 环保小知识 -->
+<section id="knowledge" class="section-wrapper background-one">
+    <!-- 标题 -->
+    <div class="section-header col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
+        <h1><span class="primary-color">环保小知识</span></h1>
+        <div class="short-line"></div>
+        <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+            <a id="refresh-knowledge">点击刷新</a>
+        </p>
+    </div>
+
+    <!--  知识容器 -->
+    <div class="container">
+        <div class="row">
+            <!-- 左竖排 -->
+            <div class="knowledge-list col-md-4 col-sm-4 col-xs-12 wow bounceInLeft">
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识1</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识4</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+            </div>
+
+            <!-- 中间竖排 -->
+            <div class="knowledge-list col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s">
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识2</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识5</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+            </div>
+
+            <!-- 右竖排 -->
+            <div class="knowledge-list col-md-4 col-sm-4 col-xs-12 wow bounceInRight">
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识3</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+
+                <div class="knowledge-item">
+                    <i class="fa fa-tree"></i>
+                    <h3>小知识6</h3>
+                    <p>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识<br>
+                        小知识小知识小知识小知识小知识小知识
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 底部 -->
+<footer class="background-two">
+    <div class="container">
+        <div class="row">
+            <div class="footer-content">
+                <div class="footer-logo wow bounceIn" data-wow-offset="0">
+                    <a href="#slider">
+                        <img id="logo-footer" src="images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <p>
+                    copyright 2020 -
+                    <a target="_blank" href="https://gitee.com/web-design-hncj/web-design">网站设计比赛作品</a>
+                    <a target="_blank" href="https://gitee.com/web-design-hncj/web-design">项目地址</a>
+                </p>
+
+                <p>
+                    by
+                    <a target="_blank" href="https://github.com/tanyiqu">Tanyiqu</a>
+                    <a target="_blank" href="https://gitee.com/system-default">Kaiser</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

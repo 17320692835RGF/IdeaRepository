@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interfaces.holidayDao">
+
+
+    <update id="updateHoliday" parameterType="com.object.holiday">
+        update holiday
+        <set>
+            <if test="holidayName!=null">holidayName=#{holidayName},</if>
+            <if test="holidayDate!=null">holidayDate=#{holidayDate},</if>
+            <if test="holidayResaon!=null">holidayReason=#{holidayReason}</if>
+        </set>
+        where holidayId=#{holidayId};
+    </update>
+</mapper>

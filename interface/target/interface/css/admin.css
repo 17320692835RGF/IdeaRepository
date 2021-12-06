@@ -1,0 +1,95 @@
+/**
+ * 管理员页面样式
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* =================↓ 顶部 ↓================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background: #444348;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+header .title {
+  line-height: 55px;
+  color: #fff;
+  font-weight: normal;
+}
+/* =================↓ 侧边导航 ↓================= */
+.slide {
+  position: fixed;
+  width: 280px;
+  height: calc(100% - 55px - 35px);
+  top: 55px;
+  left: 0;
+  background: #3b3a40;
+}
+/* =================↓ 主区域 ↓================= */
+main {
+  position: fixed;
+  width: calc(100% - 280px);
+  height: calc(100% - 55px - 35px);
+  top: 55px;
+  left: 280px;
+}
+main section {
+  padding: 20px;
+}
+main section .title {
+  margin: 10px 0;
+}
+main section .table {
+  max-height: calc(100% - 55px - 35px - 60px);
+}
+main section .add-div .input-div {
+  display: flex;
+}
+main section .add-div .input-div .el-input {
+  margin: 10px 0;
+}
+main section .add-div .btn-add {
+  float: right;
+  margin-top: 15px;
+}
+main section .pagination {
+  margin-top: 15px;
+}
+/* =================↓ 底部 ↓================= */
+footer {
+  position: fixed;
+  width: 100%;
+  height: 35px;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+footer div {
+  width: fit-content;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+footer div span {
+  margin: 0 10px;
+}
+footer div span a {
+  text-decoration: none;
+}

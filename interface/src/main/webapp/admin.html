@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTag, HtmlUnknownAttribute, JSUnresolvedLibraryURL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环境保护宣传网站 管理员 - 【网站设计比赛】</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!--    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>-->
+    <!-- toastr -->
+    <!--    <link href="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">-->
+    <!--    <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>-->
+
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+
+    <!-- element-ui -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+
+    <link rel="stylesheet" href="css/admin.css">
+
+    <script src="js/Interface.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="js/util.js"></script>
+</head>
+
+<body>
+<!-- 顶部 -->
+<header>
+    <h2 class="title">环境保护宣传网站 管理页面</h2>
+</header>
+
+
+<!-- 侧边导航 -->
+<div class="slide">
+    <div id="slide-nav">
+        <el-row class="tac">
+            <el-col :span="24">
+                <el-menu
+                        default-active="1"
+                        class="el-menu-vertical-demo"
+                        @open="handleOpen"
+                        @close="handleClose"
+                        background-color="#545c64"
+                        text-color="#fff"
+                        active-text-color="#ffd04b">
+                    <el-menu-item index="1" @click="tap">
+                        <i class="el-icon-menu"></i>
+                        <span slot="title">新闻管理</span>
+                    </el-menu-item>
+                    <el-menu-item index="2" @click="tap">
+                        <i class="el-icon-video-camera-solid"></i>
+                        <span slot="title">视频管理</span>
+                    </el-menu-item>
+                    <el-menu-item index="3" @click="tap">
+                        <i class="el-icon-s-opportunity"></i>
+                        <span slot="title">知识管理</span>
+                    </el-menu-item>
+                </el-menu>
+            </el-col>
+        </el-row>
+    </div>
+</div>
+
+
+<!-- 主区域 -->
+<main>
+
+    <!-- 新闻管理 -->
+    <section id="section1" style="display:block;">
+        <h2 class="title">新闻管理</h2>
+        <div id="news-table" class="table">
+            <el-table
+                    :data="newsData"
+                    max-height="680"
+                    border
+                    style="width: 100%">
+                <el-table-column
+                        label="标题"
+                        min-width="280">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.newsName }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="来源"
+                        min-width="200">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.newsFrom }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="链接"
+                        min-width="450">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.newsUrl }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="封面"
+                        min-width="450">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.newsFace }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button size="mini" type="danger" @click="deleteNews(scope.row.newsId)">
+                            删除
+                        </el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+
+            <!-- 添加 -->
+            <div class="add-div">
+                <div class="input-div">
+                    <el-input class="el-input" v-model="inputName" placeholder="请输入名称"></el-input>
+                    <el-input class="el-input" v-model="inputFrom" placeholder="请输入来源"></el-input>
+                    <el-input class="el-input" v-model="inputUrl" placeholder="请输入链接"></el-input>
+                    <el-input class="el-input" v-model="inputCoverUrl" placeholder="请输入封面链接"></el-input>
+                </div>
+
+                <el-button class="btn-add" type="primary" @click="addNews">
+                    添加新闻
+                </el-button>
+
+            </div>
+
+            <!-- 分页 -->
+            <el-pagination class="pagination"
+                           background
+                           layout="prev, pager, next"
+                           :total="50">
+            </el-pagination>
+        </div>
+    </section>
+
+
+    <!-- 视频管理 -->
+    <section id="section2" style="display: none">
+        <h2 class="title">视频管理</h2>
+        <div id="video-table" class="table">
+            <el-table
+                    :data="videoData"
+                    max-height="680"
+                    border
+                    style="width: 100%">
+                <el-table-column
+                        label="编号"
+                        width="100">
+                    <template slot-scope="scope">
+                        <i class="el-icon-video-play"></i>
+                        <span style="margin-left: 10px">{{ scope.row.videoId }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="名称"
+                        min-width="380">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.videoName }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="链接"
+                        min-width="450">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.videoUrl }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button size="mini" type="danger" @click="deleteVideo(scope.row.videoId)">
+                            删除
+                        </el-button>
+                    </template>
+                </el-table-column>
+
+            </el-table>
+
+            <!-- 添加 -->
+            <div class="add-div">
+                <div class="input-div">
+                    <el-input class="el-input" v-model="inputName" placeholder="请输入名称"></el-input>
+                    <el-input class="el-input" v-model="inputUrl" placeholder="请输入链接"></el-input>
+                </div>
+
+                <el-button class="btn-add" type="primary" @click="addVideo">
+                    添加视频
+                </el-button>
+
+            </div>
+
+            <!-- 分页 -->
+            <el-pagination class="pagination"
+                           background
+                           layout="prev, pager, next"
+                           :total="50">
+            </el-pagination>
+        </div>
+    </section>
+
+
+    <!-- 知识管理 -->
+    <section id="section3" style="display:none;">
+        <h2 class="title">知识管理</h2>
+        <div id="festival-table" class="table">
+            <el-table
+                    :data="festivalData"
+                    max-height="760"
+                    border
+                    style="width: 100%">
+                <el-table-column
+                        label="编号"
+                        width="60">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.holidayId }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="名称"
+                        width="130">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.holidayName }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="时间"
+                        width="130">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.holidayDate }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="介绍"
+                        min-width="450">
+                    <template slot-scope="scope">
+                        <span>{{ scope.row.holidayReason }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button size="mini" type="danger" @click="deleteFestival(scope.row.holidayId)">
+                            删除
+                        </el-button>
+                    </template>
+                </el-table-column>
+
+            </el-table>
+
+            <!-- 添加 -->
+            <div class="add-div">
+                <div class="input-div">
+                    <el-input class="el-input" v-model="inputName" placeholder="请输入名称"></el-input>
+                    <el-input class="el-input" v-model="inputDate" placeholder="请输入时间"></el-input>
+                    <el-input class="el-input" v-model="inputDesc" placeholder="请输入介绍，换行请使用“<br>”代替"></el-input>
+                </div>
+
+                <el-button class="btn-add" type="primary" @click="addFestival">
+                    添加知识
+                </el-button>
+
+            </div>
+
+            <!-- 分页 -->
+            <el-pagination class="pagination"
+                           background
+                           layout="prev, pager, next"
+                           :total="50">
+            </el-pagination>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- 底部 -->
+<footer>
+    <div>
+        <span><a href="https://gitee.com/web-design-hncj/web-design-front" target="_blank">COPYRIGHT 2020 - 网站设计比赛作品</a></span>
+        <span><a href="https://github.com/tanyiqu" target="_blank">Tanyiqu</a></span>
+        <span><a href="https://gitee.com/system-default" target="_blank">Kaiser</a></span>
+    </div>
+</footer>
+
+
+<script src="js/admin.js"></script>
+</body>
+
+
+</html>
